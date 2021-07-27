@@ -23,10 +23,14 @@ const renderDataAsHtml = (data) => {
     for (const noteItem in data) {
         const note = data[noteItem];
         const ans = document.querySelector("#label")
+        console.log("why")
         if(note.label === ans) {
             cards += createCard(note)
         }
         else if(note.label === "") {
+            cards += createCard(note)
+        }
+        else {
             cards += createCard(note)
         }
     }
