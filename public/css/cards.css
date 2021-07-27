@@ -7,11 +7,11 @@ input::placeholder {
 }
 
 /* Card start*/
-.card {
+/*.card {
   overflow: hidden;
   background: yellow;
-  /* color: var(--bg); */
-}
+  /* color: var(--bg); 
+}*/
 
 .card.large {
   border-radius: 5px;

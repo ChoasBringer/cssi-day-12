@@ -22,7 +22,13 @@ const renderDataAsHtml = (data) => {
     let cards = ``
     for (const noteItem in data) {
         const note = data[noteItem];
-        cards += createCard(note)
+        const ans = document.querySelector("#label")
+        if(note.label === ans) {
+            cards += createCard(note)
+        }
+        else if(note.label === "") {
+            cards += createCard(note)
+        }
     }
     document.querySelector("#app").innerHTML = cards
 }
@@ -30,7 +36,7 @@ const renderDataAsHtml = (data) => {
 const createCard = (note) => {
     return `
         <div class="column is-one-quarter">
-            <div class="card">
+            <div id="random"class="card" style="background-color:${getRandomColor()};">
                 <header class="card-header">
                     <p class="card-header-title">${note.title}</p>
                 </header>
@@ -40,4 +46,8 @@ const createCard = (note) => {
             </div>
         </div>             
     `
+}
+function getRandomColor() {
+  let colors = "#" + Math.floor(Math.random()*16777215).toString(16);
+  return colors;
 }
